@@ -34,9 +34,7 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           GestureDetector(
-          onTap: () {
-            print("object");
-          },
+          onTap: () {},
           child: Container(
           margin: EdgeInsets.all(10),
           width: 37,
