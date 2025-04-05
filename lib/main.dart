@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clon1/pages/home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_clon1/constants/assets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +42,7 @@ AppBar buildAppBarPersonalizado() {  // 👈 Método público (sin "_")
         borderRadius: BorderRadius.circular(10),
       ),
       child: SvgPicture.asset(
-        'assets/icons/Arrow - Left 2.svg',
+        AppAssets.arrowLeft,
         height: 20,
         width: 20,
       ),
@@ -58,7 +59,7 @@ AppBar buildAppBarPersonalizado() {  // 👈 Método público (sin "_")
             borderRadius: BorderRadius.circular(10),
           ),
           child: SvgPicture.asset(
-            'assets/icons/dots.svg',
+            AppAssets.dots,
             height: 4,
             width: 4,
           ),
