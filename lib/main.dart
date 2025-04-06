@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clon1/pages/home.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_clon1/constants/assets.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -21,52 +20,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-AppBar buildAppBarPersonalizado() {  // 👈 Método público (sin "_")
-  return AppBar(
-    title: const Text(
-      'Desayuno',
-      style: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-    ),
-    centerTitle: true,
-    backgroundColor: Colors.white,
-    elevation: 0,
-    leading: Container(
-      margin: const EdgeInsets.all(10),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: const Color(0xFFF7F8F8),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: SvgPicture.asset(
-        AppAssets.arrowLeft,
-        height: 20,
-        width: 20,
-      ),
-    ),
-    actions: [
-      GestureDetector(
-        onTap: () {},
-        child: Container(
-          margin: const EdgeInsets.all(10),
-          width: 37,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: const Color(0xFFF7F8F8),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: SvgPicture.asset(
-            AppAssets.dots,
-            height: 4,
-            width: 4,
-          ),
-        ),
-      ),
-    ],
-  );
-}
+
 // AppBar buildAppBarPersonalizada() {
 //   return AppBar(
