@@ -11,45 +11,72 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: buildAppBarPersonalizado(),
-      body: Column(children: [
-        Container(
-          margin: EdgeInsets.only(top: 40, left: 20, right: 20),
-          decoration: BoxDecoration(
-            boxShadow: [BoxShadow(
-              color: Colors.black.withOpacity(0.11),
-              blurRadius: 40,
-              spreadRadius: 0,
-            )
-        ]
-        ),
-          child: TextField(
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: SvgPicture.asset(
-                  AppAssets.search
-                ),
-              ),
-              suffixIcon: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: SvgPicture.asset(
-                  AppAssets.filter,
-                  height: 20,
-                  width: 20,
-                ),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide.none,
-              ),
-              contentPadding: EdgeInsets.all(15),
-            ),),
-        )
+      body: Column(
+        children: [
+        _searchField()
       ],),
     );
+  }
+
+  Container _searchField() {
+    return Container(
+        margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+        decoration: BoxDecoration(
+          boxShadow: [BoxShadow(
+            color: Colors.black.withOpacity(0.11),
+            blurRadius: 40,
+            spreadRadius: 0,
+          )
+      ]
+      ),
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: 'Buscar',
+            hintStyle: TextStyle(
+              color: Colors.blueGrey,
+              fontSize: 16,
+            ),
+            filled: true,
+            fillColor: Colors.white,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: SvgPicture.asset(
+                AppAssets.search
+              ),
+            ),
+            suffixIcon: IntrinsicHeight(
+              child: Container(
+                width: 100,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    VerticalDivider(
+                      color: Colors.black,
+                      thickness: 0.1,
+                      indent: 8,
+                      endIndent: 8,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: SvgPicture.asset(
+                        AppAssets.filter,
+                        height: 20,
+                        width: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide.none,
+            ),
+            contentPadding: EdgeInsets.all(15),
+          ),),
+      );
   }
 }
 
